@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    window.onload=function(){
+        var canvas=document.getElementsByTagName("canvas")[0];
+        var obj=canvas.getContext("2d");
+        var cx=parseInt(getComputedStyle(canvas,null)["width"]);
+        var cy=parseInt(getComputedStyle(canvas,null)["height"]);
+        var arr=[];
+        canvas.onmousedown=function(e){
+            var downx=e.offsetX;
+            var downy=e.offsetY;
+            canvas.onmousemove=function(e){
+                var movex=e.offsetX;
+                var movey=e.offsetY;
+                obj.clearRect(0,0,cy,cx);
+                if(arr.length>0){
+                    obj.putImageData(arr[arr.length-1],0,0);
+                }
+                obj.beginPath();
+                obj.moveTo(downx,downy);
+                obj.lineTo(movex,movey);
+                obj.strokeStyle="red";
+                obj.stroke();
+            }
+            canvas.onmouseup=function(){
+                arr.push(obj.getImageData(0,0,cx,cy));
+                canvas.onmousemove=null;
+                canvas.onmouseup=null;
+            }
+        }
+
+
+        var back=document.querySelector("input");
+        back.onclick=function(){
+            if(arr.length==0){
+                alert("不能后退了");
+                obj.clearRect(0,0,cy,cx);
+            }else{
+                var data=arr.pop();
+                obj.putImageData(data,0,0);
+            }
+        }
+    }
+</script>
+<style>
+    canvas{
+        background:#ccc;
+        position:fixed;
+        top:0px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        margin:auto;
+    }
+</style>
+<body>
+<canvas width="600" height="600"></canvas>
+<input type="button" value="后退">
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    window.onload=function(){
+        var canvas=document.querySelector("canvas");
+        var obj=canvas.getContext("2d");
+//        obj.fillStyle="red";
+//        var colorobj=obj.createLinearGradient(0,0,300,300);
+//        var colorobj=obj.createRadialGradient(0,0,0,300,300,300);
+
+        obj.shadowColor="#cc7";
+        obj.shadowBlur=30;
+        obj.shadowOffsetX=20;
+        obj.shadowOffsetY=10;
+        obj.fillStyle="red";
+
+
+//        colorobj.addColorStop(0,"red");
+//        colorobj.addColorStop(0.25,"yellow");
+//        colorobj.addColorStop(0.5,"green");
+//        colorobj.addColorStop(0.75,"orange");
+//        colorobj.addColorStop(1,"black");
+//        obj.fillStyle=colorobj;
+        obj.fillRect(0,0,300,300);
+
+
+    }
+</script>
+<style>
+    canvas{
+        background:#666;
+    }
+</style>
+<body>
+    <canvas width="600px" height="600"></canvas>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画布</title>
+</head>
+<style>
+    canvas{
+        background:#ccc;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var canvas=document.getElementsByTagName("canvas")[0];
+        var cobj=canvas.getContext("2d");
+
+
+
+
+//        var colorobj=cobj.createLinearGradient(0,0,100,0)/*先指定线性渐变的区间*/
+//        var colorobj=cobj.createRadialGradient(50,50,0,50,50,80)/*先指定径向渐变的区间  (x1,y1,r1,x2,y2,r2) 前边两个数字指定渐变的位置  第三位为它的半径 后面的设置的是渐变终止的圆的位置与半径  */
+//        colorobj.addColorStop(0,"red")/*渐变开始的颜色*/
+//        colorobj.addColorStop(1,"blue")/*渐变结束的颜色*/
+//        var cimg=cobj.createPattern(img,"no-repeat");/*引入图片*/
+        //        cobj.fillStyle=colorobj;
+
+
+
+//     给cobj绘制阴影
+//        cobj.fillStyle="red";
+//        cobj.shadowColor="#000";
+//        cobj.shadowBlur=10;
+//        cobj.shadowOffsetX=20;
+//        cobj.shadowOffsetY=10;
+
+//        cobj.fillRect(0,0,100,100);
+
+
+
+
+        /*绘制一条直线*/
+//        cobj.strokeStyle="red";/*设置线条的颜色*/
+//        cobj.lineWidth=10;/*特别注意默认的单位是像素，因此不用再添加单位*/
+//        cobj.strokeRect(5.5,5.5,100,100);
+
+
+
+        //画矩形
+//          cobj.beginPath();/*代表一条新的路径的开始*/
+//        cobj.rect(0,0,100,100);
+//        cobj.stroke();
+//        cobj.rect(120,120,100,100);
+//        cobj.stroke();
+
+
+        //画线条
+//        cobj.beginPath();
+//        cobj.moveTo(0,0);
+//        cobj.lineTo(100,100);
+//        cobj.stroke();
+
+//        function rect(x,y,w,h){
+//        cobj.beginPath();
+//        cobj.rect(x,y,w,h);
+//        cobj.stroke();
+//        cobj.closePath();
+//        }
+
+//          cobj.clearRect(0,0,600,300);/*清空画布*/
+//         cobj.getImageData(0,0,100,100);/*获取图像的数据*/
+
+
+
+
+
+
+    }
+</script>
+<body>
+<canvas width="500" height="500">
+
+</canvas>
+</body>
+</html>

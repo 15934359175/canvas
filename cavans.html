@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src="js/shape.js"></script>
+<style>
+    canvas{
+        background:#666;
+    }
+</style>
+<script>
+    window.onload=function(){
+       var canvas=document.querySelector("canvas");
+       var cobj=canvas.getContext("2d");
+       var obj=new shape(canvas,cobj);
+        obj.type="duojiao";
+        obj.fillStyle="red";
+        obj.style="stroke";
+        obj.draw();
+    }
+</script>
+<body>
+  <canvas width="600" height="600"></canvas>
+</body>
+</html>
